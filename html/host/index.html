@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        @import url('/style.css');
+    </style>
+</head>
+<body>
+    <div>
+        <bar>
+            <h1 class="title">WackBox</h1>
+        </bar>
+
+        <menu>
+            <div style="display: grid; grid-column-end: 1;">
+                <h2>Name</h2>
+                <input type="text" id="name" class="inputBar"/>
+                <button class="button" onclick="hostRoom()">Host</button>
+            </div>
+        </menu>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+    <script>
+        function hostRoom(){
+            socket.emit('hostRoom', 0, document.getElementById('name').value)
+            console.log("starting")
+        }
+    </script>
+
+</body>
+</html>
